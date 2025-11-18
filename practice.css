@@ -21,6 +21,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition: all 0.8s ease;
 }
 
 .btn > .loader {
@@ -32,12 +34,12 @@ body {
   border-radius: 50%;
 
   /* 이곳을 채워주세요. hint) animation */
-  animation: spinner;
+  animation: spinner 0.8s ease-in-out infinite;
 }
 
 .btn.loading {
   /* 이곳을 채워주세요. hint) transform */
-  transform: translateY(1000);
+  transform: translateY(50px);
   box-shadow: 0 4px 0 #a8df8e, 0 4px 4px;
 }
 
@@ -51,4 +53,8 @@ body {
 
 @keyframes spinner {
   /* 이곳을 채워주세요. hint) tranform 360도 돌아가게 */
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
