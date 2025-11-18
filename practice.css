@@ -37,7 +37,7 @@ body {
 
 .btn.loading {
   /* 이곳을 채워주세요. hint) transform */
-
+  transform: translateY(1000);
   box-shadow: 0 4px 0 #a8df8e, 0 4px 4px;
 }
 
