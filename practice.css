@@ -34,7 +34,7 @@ body {
   border-radius: 50%;
 
   /* 이곳을 채워주세요. hint) animation */
-  animation: spinner 0.8s ease-in-out infinite;
+  animation: spinner 1s linear infinite;
 }
 
 .btn.loading {
@@ -54,6 +54,9 @@ body {
 @keyframes spinner {
   /* 이곳을 채워주세요. hint) tranform 360도 돌아가게 */
 
+  0% {
+    transform: rotate(0deg);
+  }
   100% {
     transform: rotate(360deg);
   }
