@@ -77,7 +77,6 @@
         숫자를 2개 선택하고, 연산자를 선택하면<br />결과값이 alert으로
         출력됩니다.
       </p>
-      <div class="buttons"></div>
 
       <!-- 여기에 처음 선택한 숫자가 "First Number: 1" 형식의 텍스트로 보입니다.  -->
       <span class="firstNumber"></span>
@@ -87,6 +86,7 @@
       <span class="result"></span>
 
       <ul></ul>
+      <div class="buttons"></div>
     </div>
 
     <script>
@@ -94,6 +94,7 @@
       const NUMBER_INITIAL_VALUE = -1;
       let firstNumber = NUMBER_INITIAL_VALUE;
       let secondNumber = NUMBER_INITIAL_VALUE;
+      let count = 0;
 
       const firstNumberSpan = document.querySelector(".firstNumber");
       const secondNumberSpan = document.querySelector(".secondNumber");
@@ -107,12 +108,64 @@
         ulEL.innerHTML += `<li><button>${ele}</button></li>`;
       });
 
+      // 각각의 li에 이벤트 리스너 달아주기
+      const liEl = document.querySelectorAll("li");
+      liEl.forEach((ele) => {
+        ele.addEventListener("click", (event) => {
+          count++;
+          if (count === 1) {
+            // 시작 전 영역 초기화
+            firstNumberSpan.innerText = "";
+            secondNumberSpan.innerText = "";
+            resultSpan.innerText = "";
+            // 처음 클릭된 숫자 할당
+            firstNumber = event.target.innerText;
+            firstNumberSpan.innerText = `First Number: ${firstNumber}`;
+          } else if (count === 2) {
+            // 두번째 클릭된 숫자 할당
+            secondNumber = event.target.innerText;
+            secondNumberSpan.innerText = `Second Number: ${secondNumber}`;
+          }
+        });
+      });
+
       const operators = ["+", "-", "*", "/"];
       // 위 operators 배열을 활용하여 div.buttons 안에 <button>+</button>형태로
       // 연산자들을 순서대로 화면에 보여주세요
       const button = document.querySelector(".buttons");
       operators.forEach((ele) => {
         button.innerHTML += `<button>${ele}</button>`;
+      });
+
+      // 각각의 연산자에 이벤트 리스너 달아주기
+      const operatorBtn = document.querySelectorAll(".buttons button");
+      operatorBtn.forEach((ele) => {
+        ele.addEventListener("click", (event) => {
+          let resultNumber;
+          // 연산자 종류에 맞는 결과 계산
+          switch (event.target.innerText) {
+            case "+":
+              resultNumber = Number(firstNumber) + Number(secondNumber);
+              break;
+            case "-":
+              resultNumber = Number(firstNumber) - Number(secondNumber);
+              break;
+            case "*":
+              resultNumber = Number(firstNumber) * Number(secondNumber);
+              break;
+            case "/":
+              resultNumber = Number(firstNumber) / Number(secondNumber);
+              break;
+            default:
+              break;
+          }
+          resultSpan.innerText = `Result: ${firstNumber} ${event.target.innerText} ${secondNumber} = ${resultNumber}`;
+
+          // 계산 종료 후 초기화
+          count = 0;
+          firstNumber = NUMBER_INITIAL_VALUE;
+          secondNumber = NUMBER_INITIAL_VALUE;
+        });
       });
     </script>
   </body>
