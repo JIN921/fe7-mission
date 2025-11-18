@@ -34,8 +34,17 @@
       .buttons {
         display: flex;
         justify-content: center;
-        margin-top: 20px;
+        margin-top: 10px;
       }
+
+      .buttons > button {
+        height: 30px;
+        width: 30%;
+        border-radius: 5px;
+        background-color: lightgray;
+        font-size: 20px;
+      }
+
       .buttons > button:not(:last-child) {
         margin-right: 10px;
       }
@@ -68,6 +77,7 @@
         숫자를 2개 선택하고, 연산자를 선택하면<br />결과값이 alert으로
         출력됩니다.
       </p>
+      <div class="buttons"></div>
 
       <!-- 여기에 처음 선택한 숫자가 "First Number: 1" 형식의 텍스트로 보입니다.  -->
       <span class="firstNumber"></span>
@@ -77,8 +87,6 @@
       <span class="result"></span>
 
       <ul></ul>
-
-      <div class="buttons"></div>
     </div>
 
     <script>
