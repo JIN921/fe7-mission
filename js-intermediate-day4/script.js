@@ -8,20 +8,28 @@ const data = await fetchData();
 
 const ul = document.querySelector("ul");
 
-data.forEach((ele) => {
+const cart = [];
+
+data.forEach((item) => {
   const li = document.createElement("li");
   const h3 = document.createElement("h3");
   const img = document.createElement("img");
   const button = document.createElement("button");
   button.innerText = "add cart";
-  button.addEventListener("click", (event) => {
-    localStorage.setItem(`item${ele.id}`, JSON.stringify(ele));
-    console.log(typeof ele);
+  button.addEventListener("click", () => {
+    if ("count" in item) {
+      cart[item.id] = { ...cart[item.id], count: cart[item.id].count + 1 };
+      localStorage.setItem("cart", JSON.stringify(cart));
+    } else {
+      item.count = 1;
+      cart.push(item);
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
   });
 
-  h3.innerText = ele.productName;
-  img.src = `./asset/${ele.productImgFileName}`;
-  img.alt = ele.productName;
+  h3.innerText = item.productName;
+  img.src = `./asset/${item.productImgFileName}`;
+  img.alt = item.productName;
 
   li.appendChild(h3);
   li.appendChild(img);
@@ -30,5 +38,6 @@ data.forEach((ele) => {
   ul.appendChild(li);
 });
 
-const clearBtn = document.querySelector(".clearCart");
-clearBtn.addEventListener("click", () => localStorage.clear());
+const clearBtn = document
+  .querySelector(".clearCart")
+  .addEventListener("click", () => localStorage.clear());
