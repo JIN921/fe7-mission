@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <title>Document</title>
+    <style>
+      * {
+        font-family: "Courier New", Courier, monospace;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .cart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: lightyellow;
+        height: 100vh;
+      }
+      ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        list-style: none;
+        border: 2px solid #333;
+        margin-bottom: 20px;
+      }
+      li {
+        border: 2px solid #333;
+        padding: 20px;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+      }
+
+      ul > li > img {
+        width: 200px;
+        margin-top: 20px;
+      }
+      a {
+        margin-top: 20px;
+        background-color: orange;
+        color: white;
+        padding: 20px;
+        border-radius: 5px;
+      }
+      a:link {
+        color: white;
+        text-decoration: none;
+      }
+      a:visited {
+        color: white;
+        text-decoration: none;
+      }
+
+      ul > li > h3 {
+        font-size: large;
+        font-weight: 800;
+        color: brown;
+      }
+      ul > li > p {
+        color: brown;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="cart">
+      <h1>Cart</h1>
+      <ul></ul>
+      <a href="./index.html">back</a>
+    </main>
+
+    <script>
+      const cart_data = JSON.parse(localStorage.getItem("cart"));
+      const ul = document.querySelector("ul");
+
+      console.log(cart_data);
+
+      cart_data.forEach((item) => {
+        const li = document.createElement("li");
+        const h3 = document.createElement("h3");
+        h3.innerText = item.productName;
+
+        const p = document.createElement("p");
+        p.innerText = `수량 : ${item.count}`;
+
+        const img = document.createElement("img");
+        img.src = `./asset/${item.productImgFileName}`;
+        img.alt = item.productName;
+
+        li.appendChild(h3);
+        li.appendChild(img);
+        li.appendChild(p);
+        ul.appendChild(li);
+      });
+    </script>
+  </body>
+</html>
