@@ -5,7 +5,6 @@ const fetchData = async () => {
 };
 
 const data = await fetchData();
-console.log(data);
 
 const ul = document.querySelector("ul");
 
@@ -30,3 +29,6 @@ data.forEach((ele) => {
 
   ul.appendChild(li);
 });
+
+const clearBtn = document.querySelector(".clearCart");
+clearBtn.addEventListener("click", () => localStorage.clear());
