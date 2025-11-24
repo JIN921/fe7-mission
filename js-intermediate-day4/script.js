@@ -41,3 +41,11 @@ data.forEach((item) => {
 const clearBtn = document
   .querySelector(".clearCart")
   .addEventListener("click", () => localStorage.clear());
+
+const cartBtn = document
+  .querySelector("a")
+  .addEventListener("click", (event) => {
+    event.preventDefault();
+    if (cart.length === 0) alert("장바구니가 비었습니다.");
+    else window.location.href = event.currentTarget.href;
+  });
