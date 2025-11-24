@@ -8,7 +8,7 @@ const data = await fetchData();
 
 const ul = document.querySelector("ul");
 
-const cart = [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 data.forEach((item) => {
   // 아이템 목록 추가
@@ -50,6 +50,7 @@ function addToCart(item) {
   if (existing) {
     // 카운팅 +1
     existing.count += 1;
+
     localStorage.setItem("cart", JSON.stringify(cart));
   }
   // 존재하지 않으면
@@ -69,13 +70,15 @@ function addToCart(item) {
 // 카트 비우는 버튼
 const clearBtn = document
   .querySelector(".clearCart")
-  .addEventListener("click", () => localStorage.clear());
+  .addEventListener("click", () => {
+    localStorage.clear();
+    cart = [];
+  });
 
 // 카트 이동 버튼
 const cartBtn = document
   .querySelector("a")
   .addEventListener("click", (event) => {
-    console.log(cart.length);
     // 클릭시 이동 방지
     event.preventDefault();
     if (cart.length === 0) alert("장바구니가 비었습니다.");
