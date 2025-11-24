@@ -6,7 +6,7 @@ body {
   box-sizing: border-box;
   width: 100vw;
   height: 100vh;
-  background-color: burlywood;
+  background-color: rgb(190, 226, 255);
 }
 
 main {
@@ -89,11 +89,11 @@ ul > li > img {
   margin-top: 20px;
 }
 
-ul > li > span {
+ul > li > button {
   font-size: 16px;
   font-weight: 700;
   padding: 20px;
-  background-color: brown;
+  background-color: palevioletred;
   color: white;
   border-radius: 5px;
   cursor: pointer;
@@ -103,7 +103,7 @@ ul > li > span {
 button,
 a {
   padding: 10px 20px;
-  background-color: brown;
+  background-color: palevioletred;
   color: white;
   border: none;
   border-radius: 5px;

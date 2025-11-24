@@ -9,15 +9,16 @@ console.log(data);
 
 const ul = document.querySelector("ul");
 
-const span = document.createElement("span");
-span.innerText = "add cart";
-
 data.forEach((ele) => {
   const li = document.createElement("li");
   const h3 = document.createElement("h3");
   const img = document.createElement("img");
-  const span = document.createElement("span");
-  span.innerText = "add cart";
+  const button = document.createElement("button");
+  button.innerText = "add cart";
+  button.addEventListener("click", (event) => {
+    localStorage.setItem(`item${ele.id}`, JSON.stringify(ele));
+    console.log(typeof ele);
+  });
 
   h3.innerText = ele.productName;
   img.src = `./asset/${ele.productImgFileName}`;
@@ -25,7 +26,7 @@ data.forEach((ele) => {
 
   li.appendChild(h3);
   li.appendChild(img);
-  li.appendChild(span);
+  li.appendChild(button);
 
   ul.appendChild(li);
 });
