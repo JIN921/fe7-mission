@@ -17,12 +17,14 @@ data.forEach((item) => {
   const button = document.createElement("button");
   button.innerText = "add cart";
   button.addEventListener("click", () => {
-    if ("count" in item) {
-      cart[item.id] = { ...cart[item.id], count: cart[item.id].count + 1 };
+    const existing = cart.find((c) => c.id === item.id);
+    if (existing) {
+      existing.count += 1;
       localStorage.setItem("cart", JSON.stringify(cart));
     } else {
-      item.count = 1;
-      cart.push(item);
+      const new_item = { ...item };
+      new_item.count = 1;
+      cart.push(new_item);
       localStorage.setItem("cart", JSON.stringify(cart));
     }
   });
