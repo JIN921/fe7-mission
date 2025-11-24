@@ -49,3 +49,21 @@ const cartBtn = document
     if (cart.length === 0) alert("장바구니가 비었습니다.");
     else window.location.href = event.currentTarget.href;
   });
+
+const modal = document.createElement("div");
+const modalInner = document.createElement("div");
+const modalText = document.createElement("span");
+const modalBtn = document.createElement("button");
+modalBtn.innerText = "오늘 그만보기";
+modalText.innerText = "방문해 주셔서 감사합니다! \n 즐거운 쇼핑 되세요!";
+modalBtn.addEventListener("click", () => {});
+
+modal.className = "modal";
+modalInner.className = "modalInner";
+
+document.body.appendChild(modal);
+modalInner.appendChild(modalText);
+modalInner.appendChild(modalBtn);
+modal.appendChild(modalInner);
+
+console.log(modal);
