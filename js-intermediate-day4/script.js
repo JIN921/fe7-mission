@@ -56,7 +56,10 @@ const modalText = document.createElement("span");
 const modalBtn = document.createElement("button");
 modalBtn.innerText = "오늘 그만보기";
 modalText.innerText = "방문해 주셔서 감사합니다! \n 즐거운 쇼핑 되세요!";
-modalBtn.addEventListener("click", () => {});
+modalBtn.addEventListener("click", () => {
+  sessionStorage.setItem("closeModal", true);
+  document.body.removeChild(modal);
+});
 
 modal.className = "modal";
 modalInner.className = "modalInner";
@@ -65,5 +68,6 @@ document.body.appendChild(modal);
 modalInner.appendChild(modalText);
 modalInner.appendChild(modalBtn);
 modal.appendChild(modalInner);
-
-console.log(modal);
+if (sessionStorage.getItem("closeModal")) {
+  document.body.removeChild(modal);
+}
