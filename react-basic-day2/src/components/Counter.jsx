@@ -21,7 +21,7 @@ export default function Counter() {
       <button onClick={handlePlusOneBtn}>+1</button>
       <br />
       <input
-        type="text"
+        type="number"
         placeholder="숫자만 적으세요"
         value={inputNumber}
         onChange={handleInputNumber}
