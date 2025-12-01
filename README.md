@@ -6,8 +6,13 @@
   ## 계산기 미션
   https://github.com/user-attachments/assets/9d55b1d0-a616-4f6c-bd93-ad56016b6e09
 </details>
+<details>
+  <summary>JS 중급 4일차 미션</summary>
+  https://github.com/user-attachments/assets/e338b2bc-85e2-4145-bbf8-7aec640d9b72
+</details>
 
 ## 미션
 
-https://github.com/user-attachments/assets/e338b2bc-85e2-4145-bbf8-7aec640d9b72
+https://github.com/user-attachments/assets/d1fc9598-e54b-4e5d-b0f6-d19d785dd2c5
+
 
