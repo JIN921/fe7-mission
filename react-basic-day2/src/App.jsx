@@ -1,3 +1,4 @@
+import Counter from "./components/Counter";
 import Mandoo from "./components/Mandoo";
 
 const todoLists = {
@@ -14,6 +15,7 @@ export default function App() {
           <li key={idx}>{todo}</li>
         ))}
       </ul>
+      <Counter />
     </main>
   );
 }
