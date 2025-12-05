@@ -25,4 +25,9 @@
 
 React 기초 6일차 미션1
 
+- ts 마이그레이션
+- css 수정
 <br />
+
+https://github.com/user-attachments/assets/50e4e4e2-ade2-4832-b16d-e93abec9bb34
+
