@@ -1,4 +1,5 @@
 # fe7-mission
+
 <details>
   <summary>JS 기초 5일차 미션</summary>
   ## 실습
@@ -15,9 +16,13 @@
   https://github.com/user-attachments/assets/d1fc9598-e54b-4e5d-b0f6-d19d785dd2c5
 </details>
 
+<details>
+  <summary>React 기초 4일차 미션</summary>
+  https://github.com/user-attachments/assets/8c2ada4a-805d-4bb3-b1d8-9fe10e9aef19
+</details>
+
 ## 미션
 
-영상 크기가 커져서 배속을 좀 돌렸습니다,,
-<br />
-https://github.com/user-attachments/assets/8c2ada4a-805d-4bb3-b1d8-9fe10e9aef19
+React 기초 6일차 미션1
 
+<br />
