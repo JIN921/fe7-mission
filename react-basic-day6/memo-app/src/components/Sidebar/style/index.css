@@ -1,0 +1,29 @@
+.sidebar-container {
+  padding: 15px;
+  background-color: #faf3e0;
+  color: #5c504a;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-width: 300px;
+  transition: all 0.5s ease;
+}
+
+.sidebar-container.show {
+  flex: 1;
+}
+
+.sidebar-header {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.sidebar-header > h2 {
+  font-weight: bold;
+  font-size: larger;
+}

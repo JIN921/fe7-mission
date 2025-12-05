@@ -1,0 +1,20 @@
+.item-container {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 5px;
+  align-items: center;
+  box-sizing: border-box;
+
+  min-width: 50px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.item-container.selected {
+  background-color: #ffda79;
+}

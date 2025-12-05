@@ -1,0 +1,52 @@
+.memo-container {
+  background-color: #f9fbfc;
+  color: #2f3a3d;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  flex: 3;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.memo-container input,
+.memo-container textarea {
+  background-color: transparent;
+  border: none;
+  padding: 10px 12px;
+  color: #2f3a3d;
+  width: 100%;
+  font-family: inherit;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.memo-container input {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.memo-container input::placeholder {
+  color: #9aa5ab;
+  font-weight: 600;
+}
+
+.memo-container textarea::placeholder {
+  color: #b0b9be;
+}
+
+.memo-container textarea {
+  flex: 1;
+  resize: none;
+  font-size: 18px;
+  line-height: 1.6;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.memo-container input:focus,
+.memo-container textarea:focus {
+  background-color: #f2f5f7;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
